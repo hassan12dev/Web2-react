@@ -1,0 +1,106 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.bg-on {
+  background-color: #fffcb1; /* Light Yellow */
+  transition: background-color 0.5s ease;
+  height: 100vh;
+}
+
+.bg-off {
+  background-color: #ffffff; /* White */
+  transition: background-color 0.5s ease;
+  height: 100vh;
+}
+
+/* 🔤 Animated Header */
+.header {
+  padding-top: 60px;
+  font-size: 25px;
+  text-align: center;
+  font-weight: 800;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: slideFade 1.3s ease forwards;
+}
+
+@keyframes slideFade {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  width: 100%;
+  height: calc(100vh - 100px); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bulb {
+  transition: all 0.3s ease-in-out;
+}
+
+.glow {
+  filter: drop-shadow(0 0 30px yellow);
+}
+
+.toggle_container {
+  margin-top: 50px;
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 40px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  left: 5px;
+  bottom: 5px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: yellow;
+}
+
+input:checked + .slider:before {
+  transform: translateX(40px);
+}
